@@ -1,71 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="En Dentistry, buscamos mejorar su salud bucal, crear sonrisas y otorgar confianza. Manejamos cada caso de forma única y personalizada.">
+    <meta name="keywords" content="Dentista, clínica dental, extracción muela del juicio, Dentista Lima, Implante dental Lima">
+    <link href="//db.onlinewebfonts.com/c/25b37831529b1fe1a47649b945dda302?family=Bw+Modelica+Med" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>SoundSphere | Parlantes</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/android-chrome-512x512.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous"> 
+
+   
 </head>
+
 <body>
-    <div id="app">
-      
-        <table class="encabezado">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Descripción</th>
-                    <th>Tipo</th>
-                    <th>Monto</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody class="entries">
-                <tr>
-                    <td>
-                        <input class="input input-date" type="date">
-                    </td>
-                    <td>
-                        <input class="input input-description" type="text" placeholder="Añade una descripción (e.g. salario, venta de ropa, etc...)">
-                    </td>
-                    <td>
-                        <select class="input input-type">
-                            <option value="income">Ingreso</option>
-                            <option value="expense">Gasto</option>
-                        </select>
-                    </td>
-                    <td>
-                        <input type="number" class="input input-amount">
-                    </td>
-                    <td>
-                        <button type="button" class="borrar-entrada">&#10005;
+<!-- Inicio de NavBar -->
+
+<header class="header">
+  <nav class="navbar navbar-expand-lg header__bgColor">
+      <div class="container-fluid">
+        <a class="navbar-brand px-lg-5" href="index.html">
+            <img class="header__logo" src="img/2.svg" alt="">
+  
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end px-5" id="navbarNav">
+          <ul class="navbar-nav justify-content-end">
+            <li class="nav-item px-3">
+              <a class="header__text nav-link active text-white" aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="header__text nav-link" href="./index.html">Catálogo</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="header__text nav-link" href="./index.html"><img src="./img/cart-fill.svg" alt=""></a>
+            </li>
             
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</header>
 
-            <tbody>
-                <tr>
-                    <td colspan="5" class="controles">
-                        <button type="button" class="new-entry">Nueva entrada</button>
-                    </td>
-                </tr>
-            </tbody>
+<!-- Fin de NavBar -->
 
-            <tfoot>
-                <tr>
-                    <td colspan="5" class="resumenBalance">
-                        <strong>Total:</strong>
-                        <span class="total">$0.00</span>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-     
+
+<!-- Inicio de Hero -->
+    <div class= "container-fluid align-items-center justify-content-center">
+        <section class="hero row flex-column align-items-center justify-content-center">
+    
+          <div class="hero__textContainer flex-column align-items-center justify-content-center">
+            <h1 class="animate__animated animate__fadeIn text-center text-white">El mejor sonido para tu hogar.</h1>
+            <div class="hero__textContainer anchorButton text-center">
+
+              <a href="#" class="animate__animated animate__fadeIn text-white text-center">Ver catálogo</a>
+            </div>
+        
+          </div>
+
+          
+        
+        </section>
     </div>
-    <script type="module" src="./js/javascript.js"></script>
-</body>
+<!-- Fin de Hero -->
 
+
+<!-- INICIO DE PostHero-->
+<section class="catalogo container-fluid">
+  <h2 class="catalogoText">Catálogo</h2>
+      <!-- Container for all products -->
+  <div class="container mb-5 mt-5">
+    <div class="row">
+  
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card mt-3">
+          <div class="product-1 alig-items-center p-2 text-center">
+            <img src="./img/Productos/1-28.png" alt="" class="rounded" width="300">
+            <h5>BOSE PORTABLE HOME SPEAKER</h5>
+            <!-- Card info -->
+            <div class="mt-3 info">
+              <span class="text1 d-block">Lorem ipsum dolor ist amet.</span>
+              <span class="text1">Lorem impsum dolor.</span>
+            </div>
+            <div class="costwatch mt-3 text-dark">
+              <span>$69.99</span>
+              <div class="star mt-3 align-items-center">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+            </div>
+            <!-- Card info ends here -->
+          </div>
+  
+          <!-- Button for cards -->
+          <div class="p-3 watch text-center text-white mt-3 cursor">
+            <span class="text-uppercase">Añadir al carrito</span>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Card 1 ends here -->
+  
+           <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card mt-3">
+          <div class="product-1 alig-items-center p-2 text-center">
+            <img src="./img/Productos/JBL Flip 6.jpeg" alt="" class="rounded" width="300">
+            <h5>JBL FLIP 6</h5>
+            <!-- Card info -->
+            <div class="mt-3 info">
+              <span class="text1 d-block">Color: Negro.</span>
+              <span class="text1">Bluetooth.</span>
+            </div>
+            <div class="costwatch mt-3 text-dark">
+              <span>$69.99</span>
+              <div class="star mt-3 align-items-center">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+            </div>
+            <!-- Card info ends here -->
+          </div>
+  
+          <!-- Button for cards -->
+          <div class="p-3 watch text-center text-white mt-3 cursor">
+            <span class="text-uppercase">Añadir al carrito</span>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Card 2 ends here -->
+
+       <!-- Card 3 -->
+       <div class="col-md-4">
+        <div class="card mt-3">
+          <div class="product-1 alig-items-center p-2 text-center">
+            <img src="./img/Productos/Sony SRS XB13.webp" alt="" class="rounded" width="300">
+            <h5>SONY SRS XB13</h5>
+            <!-- Card info -->
+            <div class="mt-3 info">
+              <span class="text1 d-block">Lorem ipsum dolor ist amet.</span>
+              <span class="text1">Lorem impsum dolor.</span>
+            </div>
+            <div class="costwatch mt-3 text-dark">
+              <span>$69.99</span>
+              <div class="star mt-3 align-items-center">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+            </div>
+            <!-- Card info ends here -->
+          </div>
+  
+          <!-- Button for cards -->
+          <div class="p-3 watch text-center text-white mt-3 cursor">
+            <span class="text-uppercase">Añadir al carrito</span>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Card 3 ends here -->
+       <!-- Card 4 -->
+       <div class="col-md-4">
+        <div class="card mt-3">
+          <div class="product-1 alig-items-center p-2 text-center">
+            <img src="./img/Productos/JBL Tricolor.jpeg" alt="" class="rounded" width="300">
+            <h5>JBL CLIP 4</h5>
+            <!-- Card info -->
+            <div class="mt-3 info">
+              <span class="text1 d-block">Marca: JBL.</span>
+              <span class="text1">Color: Negro, azul, rojo.</span>
+            </div>
+            <div class="costwatch mt-3 text-dark">
+              <span>$69.99</span>
+              <div class="star mt-3 align-items-center">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+            </div>
+            <!-- Card info ends here -->
+          </div>
+  
+          <!-- Button for cards -->
+          <div class="p-3 watch text-center text-white mt-3 cursor">
+            <span class="text-uppercase">Añadir al carrito</span>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Card 4 ends here -->
+       <!-- Card 1 -->
+       <div class="col-md-4">
+        <div class="card mt-3">
+          <div class="product-1 alig-items-center p-2 text-center">
+            <img src="./img/Productos/BoseSoundLinkII.jpeg" alt="" class="rounded" width="300">
+            <h5>BOSE SOUNDLINK COLOR II</h5>
+            <!-- Card info -->
+            <div class="mt-3 info">
+              <span class="text1 d-block">Lorem ipsum dolor ist amet.</span>
+              <span class="text1">Lorem impsum dolor.</span>
+            </div>
+            <div class="costwatch mt-3 text-dark">
+              <span>$69.99</span>
+              <div class="star mt-3 align-items-center">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+            </div>
+            <!-- Card info ends here -->
+          </div>
+  
+          <!-- Button for cards -->
+          <div class="p-3 watch text-center text-white mt-3 cursor">
+            <span class="text-uppercase">Añadir al carrito</span>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Card 1 ends here -->
+       <!-- Card 1 -->
+       <div class="col-md-4">
+        <div class="card mt-3">
+          <div class="product-1 alig-items-center p-2 text-center">
+            <img src="./img/Productos/XB23.jpeg" alt="" class="rounded" width="300">
+            <h5>SONY SRS-XB23</h5>
+            <!-- Card info -->
+            <div class="mt-3 info">
+              <span class="text1 d-block">Lorem ipsum dolor ist amet.</span>
+              <span class="text1">Lorem impsum dolor.</span>
+            </div>
+            <div class="costwatch mt-3 text-dark">
+              <span>$69.99</span>
+              <div class="star mt-3 align-items-center">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+            </div>
+            <!-- Card info ends here -->
+          </div>
+  
+          <!-- Button for cards -->
+          <div class="p-3 watch text-center text-white mt-3 cursor">
+            <span class="text-uppercase">Add to cart</span>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Card 1 ends here -->
+    </div>
+  
+</section>
+    
+       
+
+<!-- Fin de PostHero-->
+
+<!-- Inicio de Footer -->
+    
+    <footer class="container-fluid footer row align-items-center justify-content-center">
+     <div class="p-5 col-md-4 row justify-content-center align-items-center">
+        <img src="./img/Tunely copy.svg" alt="" class="footer__logo">
+     </div>
+     <div class="col-md-4 text-center p-4">
+        <h3 class="text-white">Navegación</h3>
+        <ul class="list-unstyled">
+            <li><a class="text-decoration-none text-white" href="./index.html">Inicio</a></li>
+            <li><a class="text-decoration-none text-white" href="./index.html">Catálogo</a></li>
+        </ul>
+     </div>
+
+     <div class="col-md-4 text-center">
+        <h3 class="text-white">Contacto</h3>
+        <p class="text-white">+51 999 999 999</p>
+            <a class="text-decoration-none text-white" href="#">Dirección</a> 
+     </div>
+    </footer>
+
+    <!-- Fin de Footer -->
+<!-- <script src="./js/javascript.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
 
 </html>

@@ -1,60 +1,137 @@
-.encabezado{
-    border-collapse: collapse;
-    min-width: 750px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Teko&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Teko', sans-serif;
+  box-sizing: border-box; }
 
-.encabezado * {
-    font-family: sans-serif;
-}
+/* Inicio Header*/
+.header__bgColor {
+    background-color: #191513; }
+  
+  .header__logo {
+    width: 200px; }
+  
+  .header__text {
+    color: white;
+    font-weight: 900;
+    font-size: large; }
+  
+  /* Fin Header */
 
-.encabezado th{
-    text-align: left;
-    padding: 10px 20px;
-    border-bottom: 2px solid #009578;
-}
 
-.encabezado td {
-    padding: 5px;
-}
-
-.input,
-.borrar-entrada{
-    height: 30px;
-    font-size: 13px;
-    padding: 0 10px;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.input {
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-    outline: none;
-
-}
-
-.input:focus{
-    border-color: #bbbbbb
-}
-
-.borrar-entrada{
+  .hero { 
+    position: relative; 
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    background: none;
-    color: red;
+    background-image: url(/img/pexels-anthony-157534.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.65);
+}
+
+/* Fin de Hero */
+
+/* Inicio Catálogo */
+.catalogo{
+  background-color: white;
+}
+
+.catalogoText{
+  font-size: 4rem;
+  line-height: 8rem;
+  padding-left: 3rem;
+}
+
+/* Productos Catalogo */
+
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css";
+
+/* Universal styling for all cards */
+
+.card{
     border: none;
-    border-radius: 50%;
     outline: none;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.card:hover{
+    transform: translateY(-15px);
+    transition: transform .3s;
+
+}
+
+.text1{
+    font-size: 13px;
+    color: #cbcbcb;
+
+}
+
+.info{
+    line-height: 17px;
+}
+
+.star{
+    color: #fbc02d;
+}
+
+/* Card1 */
+.cost span{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.shoe{
+    background: black;
+}
+
+/* Card 2 */
+
+.costwatch span{
+  color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.watch{
+  background: black;
+}
+
+/* Universal styking again */
+
+.shirt:hover, watch:hover, .shoe:hover{
+    opacity: 0.8;
+}
+
+.cursor{
     cursor: pointer;
+
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 20px;}
+
+.rounded{
+  width: 300px;
+  height: 300px;
 }
 
-.borrar-entrada:hover{
-    background: rgba(255, 0, 0, 0.1);
+.footer{
+    background-color: black;
 }
 
-.controles,
-.resumenBalance{text-align: right;
-
+.footer__logo{
+width: 7rem;
 }
