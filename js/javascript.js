@@ -1,52 +1,119 @@
-const productosPrecios = [{ precio: 50, producto: "Parlante 1" },
-{ precio: 10,  producto: "Parlante 2" },
-{ precio: 100,  producto: "Parlante 3" }];
 
-// Filtrar por precios
-const filtro = productosPrecios.filter((el) => el.precio <= 50)
+// QUITAR OBJETOS DEL CARRITO
 
-const productos = ["undefined", "Parlante 1", "Parlante 2", "Parlante 3"];
+var quitarDeCarritoBoton = document.getElementsByClassName('btn-remover')
+for (var i = 0; i < quitarDeCarritoBoton.length; i++) {
+    var button = quitarDeCarrito[i]
+    button.addEventListener('click', quitarDeCarritoFuncion)
+}
 
-const precios = [undefined,50,10,100]
+// // Que el minimo de cantidad por obejto sea uno (que el usuario no pueda poner cantidades negativas de objetos)
 
-let productosCarrito = parseInt(prompt("¿Cuál de los siguientes productos vas a llevar?\nEscribe " + productos.indexOf("Parlante 1") + " para " + productos[1] + " (" +precios[1] + " USD)\nEscribe " + productos.indexOf("Parlante 2") + " para " + productos[2] + " (" +precios[2] + " USD)\nEscribe " + productos.indexOf("Parlante 3") + " para " + productos[3] + " (" +precios[3] + " USD)\nEscribe 4 para mostrar EN CONSOLA los productos no mayores que 50 USD"))
 
-let subtotal = 0
+var inputCantidad = document.getElementsByClassName('inputCantidadCarrito')
+for (var i = 0; i < inputCantidad.length; i++) {
+    var input = inputCantidad[i]
+    input.addEventListener('change', cantidadCambiada)
+}
 
-function sumarPrecio(){
-    subtotal=subtotal + precios[productosCarrito]
+// Añadir al Carrito
+var anhadirAlCarritoBoton = document.getElementsByClassName('botonComprarArticulo')
+for (var i = 0; i < anhadirAlCarritoBoton.length; i++) {
+    var boton= anhadirAlCarritoBoton[i]
+    boton.addEventListener('click', anhadirAlCarritoClick)
 }
 
 
-while(productosCarrito!=5){
-    switch(productosCarrito){
-        case 1:
-            alert("Se agregó " +  productos[productosCarrito] + " (" + precios[productosCarrito]+" USD) al carrito")
-            sumarPrecio()
-            break;
-        case 2:
-            alert("Se agregó " +  productos[productosCarrito] + " (" + precios[productosCarrito]+" USD) al carrito")
-            sumarPrecio()
-            break;
-        case 3:
-            alert("Se agregó " +  productos[productosCarrito] + " (" + precios[productosCarrito]+" USD) al carrito")
-            sumarPrecio()
-            break;
-        
-        case 4:
-            alert("Por favor, procede a escribir 5 y posteriormente, revisa la consola")
-            console.log(filtro)
-            break;
 
-        default:
-            alert("Opción no valida")
+// Boton COMPRAR
+document.getElementsByClassName('botonComprar')[0].addEventListener('click', comprarClick)
 
+
+
+// Funcion del Boton COMPRAR
+
+function comprarClick() {
+    alert('Thank you for your purchase')
+    var itemsCarrito = document.getElementsByClassName('articulosCarrito')[0]
+    while (itemsCarrito.hasChildNodes()) {
+        itemsCarrito.removeChild(itemsCarrito.firstChild)
+    }
+    actualizarTotal()
+}
+
+
+// Funcion Quitar Carrito
+function quitarDeCarritoFuncion(event){
+    var botonClickeado = event.target
+    botonClickeado.parentElement.parentElement.remove()
+    actualizarTotal()
+}
+
+
+// Funcion para que no se pueda poner cantidades negativas de objetos
+
+function cantidadCambiada(event) {
+    var input = event.target
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+    actualizarTotal()
+}
+
+// Funcion Añadir al Carrito
+function anhadirAlCarritoClick(event) {
+    var boton = event.target
+    var comprarItem = boton.parentElement.parentElement
+    var titulo = comprarItem.getElementsByClassName('articuloTitulo')[0].innerText
+    var precio = comprarItem.getElementsByClassName('articuloPrecio')[0].innerText
+    var imagenSrc = comprarItem.getElementsByClassName('articuloImagen')[0].src
+    anhadirItemAlCarrito(titulo, precio, imagenSrc)
+    actualizarTotal()
+}
+
+// Lo que se añade al carrito
+
+function anhadirItemAlCarrito(title, price, imageSrc) {
+    var filaCarrito = document.createElement('div')
+    filaCarrito.classList.add('cart-row')
+    var itemsCarrito = document.getElementsByClassName('articulosCarrito')[0]
+    var nombreItemCarrito = itemsCarrito.getElementsByClassName('cart-item-title')
+    for (var i = 0; i < nombreItemCarrito.length; i++) {
+        if (nombreItemCarrito[i].innerText == title) {
+            alert('This item is already added to the cart')
+            return
         }
+    }
+    var contenidoFilaCarrito = `
+        <div class="cart-item cart-column">
+            <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+            <span class="cart-item-title">${title}</span>
+        </div>
+        <span class="cart-price cart-column">${price}</span>
+        <div class="cart-quantity cart-column">
+            <input class="inputCantidadCarrito" type="number" value="1">
+            <button class="btn btn-remover" type="button">REMOVER</button>
+        </div>`
+    filaCarrito.innerHTML = contenidoFilaCarrito
+    itemsCarrito.append(filaCarrito)
+    filaCarrito.getElementsByClassName('btn-remover')[0].addEventListener('click', quitarDeCarritoFuncion)
+    filaCarrito.getElementsByClassName('inputCantidadCarrito')[0].addEventListener('change', cantidadCambiada)
+}
+// Funcion actualizar total (precio a pagar)
 
-        productosCarrito = parseInt(prompt("¿Va a agregar otro producto?\nEscribe " + productos.indexOf("Parlante 1") + " para " + productos[1] + " (" +precios[1] + " USD)\nEscribe " + productos.indexOf("Parlante 2") + " para " + productos[2] + " (" +precios[2] + " USD)\nEscribe " + productos.indexOf("Parlante 3") + " para " + productos[3] + " (" +precios[3] + " USD)\nEscribe 4 para mostrar EN CONSOLA los productos no mayores que 50 USD\nEscribe 5 si no va a agregar ningún otro producto y mostrar su SUBTOTAL."))
-        }
 
-        alert("El subtotal es USD " + subtotal)
-
-
-
+function actualizarTotal() {
+    var containerItemCarrito = document.getElementsByClassName('articulosCarrito')[0]
+    var filaCarrito = containerItemCarrito.getElementsByClassName('cart-row')
+    var total = 0
+    for (var i = 0; i < filaCarrito.length; i++) {
+        var filaCarrito = filaCarrito[i]
+        var precioItem = filaCarrito.getElementsByClassName('cart-price')[0]
+        var cantidadItem = filaCarrito.getElementsByClassName('inputCantidadCarrito')[0]
+        var precio = parseFloat(precioItem.innerText.replace('$', ''))
+        var cantidad = cantidadItem.value
+        total = total + (precio * cantidad)
+    }
+    total = Math.round(total * 100) / 100
+    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+}
