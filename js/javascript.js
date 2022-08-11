@@ -3,9 +3,12 @@
 
 var quitarDeCarritoBoton = document.getElementsByClassName('btn-remover')
 for (var i = 0; i < quitarDeCarritoBoton.length; i++) {
-    var button = quitarDeCarrito[i]
+    var button = quitarDeCarritoBoton[i]
     button.addEventListener('click', quitarDeCarritoFuncion)
 }
+
+console.log(quitarDeCarritoBoton.length)
+console.log(i)
 
 // // Que el minimo de cantidad por obejto sea uno (que el usuario no pueda poner cantidades negativas de objetos)
 
@@ -44,6 +47,8 @@ function comprarClick() {
 
 // Funcion Quitar Carrito
 function quitarDeCarritoFuncion(event){
+// target para referirnos al elemento clickeado
+
     var botonClickeado = event.target
     botonClickeado.parentElement.parentElement.remove()
     actualizarTotal()
@@ -75,12 +80,13 @@ function anhadirAlCarritoClick(event) {
 
 function anhadirItemAlCarrito(title, price, imageSrc) {
     var filaCarrito = document.createElement('div')
+    // acceder a la lista de clases de un elemento  
     filaCarrito.classList.add('cart-row')
     var itemsCarrito = document.getElementsByClassName('articulosCarrito')[0]
     var nombreItemCarrito = itemsCarrito.getElementsByClassName('cart-item-title')
     for (var i = 0; i < nombreItemCarrito.length; i++) {
         if (nombreItemCarrito[i].innerText == title) {
-            alert('This item is already added to the cart')
+            alert('Este item ya está en el carrito')
             return
         }
     }
