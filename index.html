@@ -24,26 +24,32 @@
             </header>
 <!-- Fin Carrito -->
 
+
 <!-- CATALOGO -->
 <section class="catalogo container-fluid">
     <h2 class="catalogoText">Catálogo</h2>
+
+  <!-- Filters -->
+  <button type="button" class="btn btn-dark mx-5" id="filterButtonLess">Ordenar de menor precio a mayor precio</button>
+  <button type="button" class="btn btn-dark" id="filterButtonGreater">Ordenar de mayor precio a menor precio</button>
+
         <!-- Container for all products -->
     <div class="container mb-5 mt-5">
       <div class="row">
     
         <!-- Card 1 -->
-        <div class="col-md-4">
+        <div class="col-md-4" id="filterFirstLess">
           <div class="card mt-3">
             <div id="productoTarjeta" class="product-1 align-items-center p-2 text-center">
-              <img src="./img/Productos/1-28.png" alt="" class="rounded articuloImagen">
-              <h5 class="articuloTitulo">BOSE PORTABLE HOME SPEAKER</h5>
+              <img id="primerIMG" src="./img/Productos/1-28.png" alt="" class="rounded articuloImagen">
+              <h5 class="articuloTitulo" id="primerH5">BOSE PORTABLE HOME SPEAKER</h5>
               <!-- Card info -->
               <div class="mt-3 info">
-                <span class="text1 d-block">Lorem ipsum dolor ist amet.</span>
-                <span class="text1">Lorem impsum dolor.</span>
+                <span class="text1 d-block" id="descripcion1">Lorem ipsum dolor ist amet.</span>
+                <span class="text1" id="descripcion2">Lorem impsum dolor.</span>
               </div>
               <div class="costwatch mt-3 text-dark">
-                <span class="articuloPrecio">$69.99</span>
+                <span class="articuloPrecio" id="precioFilter">$99.99</span>
                 <div class="star mt-3 align-items-center">
                   <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                 </div>
@@ -64,15 +70,15 @@
         <div class="col-md-4">
           <div class="card mt-3">
             <div class="align-items-center p-2 text-center">
-              <img src="./img/Productos/JBL Flip 6.jpeg" alt="" class="rounded articuloImagen" width="300">
-              <h5 class="articuloTitulo">JBL FLIP 6</h5>
+              <img src="./img/Productos/JBL Flip 6.jpeg" id="segundoIMG" alt="" class="rounded articuloImagen" width="300">
+              <h5 class="articuloTitulo" id="segundoH5">JBL FLIP 6</h5>
               <!-- Card info -->
               <div class="mt-3 info">
-                <span class="text1 d-block">Color: Negro.</span>
-                <span class="text1">Bluetooth.</span>
+                <span class="text1 d-block" id="descripcion3">Color: Negro.</span>
+                <span class="text1" id="descripcion4">Bluetooth.</span>
               </div>
               <div class="costwatch mt-3 text-dark">
-                <span class="articuloPrecio">$69.99</span>
+                <span class="articuloPrecio" id="precioFilter2">$49.99</span>
                 <div class="star mt-3 align-items-center">
                   <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                 </div>
@@ -93,15 +99,15 @@
          <div class="col-md-4">
           <div class="card mt-3">
             <div class="align-items-center p-2 text-center">
-              <img src="./img/Productos/Sony SRS XB13.webp" alt="" class="rounded articuloImagen" width="300">
-              <h5 class="articuloTitulo">SONY SRS XB13</h5>
+              <img src="./img/Productos/Sony SRS XB13.webp" id="tercerIMG" alt="" class="rounded articuloImagen" width="300">
+              <h5 class="articuloTitulo" id="tercerH5">SONY SRS XB13</h5>
               <!-- Card info -->
               <div class="mt-3 info">
-                <span class="text1 d-block">Lorem ipsum dolor ist amet.</span>
-                <span class="text1">Lorem impsum dolor.</span>
+                <span class="text1 d-block" id="descripcion5">Lorem ipsum dolor ist amet.</span>
+                <span class="text1" id="descripcion6">Lorem impsum dolor.</span>
               </div>
               <div class="costwatch mt-3 text-dark">
-                <span class="articuloPrecio">$50</span>
+                <span class="articuloPrecio" id="precioFilter3">$35.99</span>
                 <div class="star mt-3 align-items-center">
                   <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                 </div>
@@ -121,15 +127,15 @@
          <div class="col-md-4">
           <div class="card mt-3">
             <div class="align-items-center p-2 text-center">
-              <img src="./img/Productos/JBL Tricolor.jpeg" alt="" class="rounded articuloImagen" width="300">
-              <h5 class="articuloTitulo">JBL CLIP 4</h5>
+              <img src="./img/Productos/JBL Tricolor.jpeg" id="cuartoIMG" alt="" class="rounded articuloImagen" width="300">
+              <h5 class="articuloTitulo" id="cuartoH5">JBL CLIP 4</h5>
               <!-- Card info -->
               <div class="mt-3 info">
-                <span class="text1 d-block">Marca: JBL.</span>
-                <span class="text1">Color: Negro, azul, rojo.</span>
+                <span class="text1 d-block" id="descripcion7">Marca: JBL.</span>
+                <span class="text1" id="descripcion8">Color: Negro, azul, rojo.</span>
               </div>
               <div class="costwatch mt-3 text-dark">
-                <span class="articuloPrecio">$69.99</span>
+                <span class="articuloPrecio" id="precioFilter4">$29.99</span>
                 <div class="star mt-3 align-items-center">
                   <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                 </div>
@@ -149,15 +155,15 @@
          <div class="col-md-4">
           <div class="card mt-3">
             <div class="align-items-center p-2 text-center">
-              <img src="./img/Productos/BoseSoundLinkII.jpeg" alt="" class="rounded articuloImagen" width="300">
-              <h5 class="articuloTitulo">BOSE SOUNDLINK COLOR II</h5>
+              <img src="./img/Productos/BoseSoundLinkII.jpeg" id="quintoIMG" alt="" class="rounded articuloImagen" width="300">
+              <h5 class="articuloTitulo" id="quintoH5">BOSE SOUNDLINK COLOR II</h5>
               <!-- Card info -->
               <div class="mt-3 info">
-                <span class="text1 d-block">Lorem ipsum dolor ist amet.</span>
-                <span class="text1">Lorem impsum dolor.</span>
+                <span class="text1 d-block" id="descripcion9">Lorem ipsum dolor ist amet.</span>
+                <span class="text1" id="descripcion10">Lorem impsum dolor.</span>
               </div>
               <div class="costwatch mt-3 text-dark">
-                <span class="articuloPrecio">$69.99</span>
+                <span class="articuloPrecio" id="precioFilter5">$59.99</span>
                 <div class="star mt-3 align-items-center">
                   <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                 </div>
@@ -177,15 +183,15 @@
          <div class="col-md-4">
           <div class="card mt-3">
             <div class="product-1 alig-items-center p-2 text-center">
-              <img src="./img/Productos/XB23.jpeg" alt="" class="rounded articuloImagen" width="300">
-              <h5 class="articuloTitulo">SONY SRS-XB23</h5>
+              <img src="./img/Productos/XB23.jpeg" id="sextoIMG" alt="" class="rounded articuloImagen" width="300">
+              <h5 class="articuloTitulo" id="sextoH5">SONY SRS-XB23</h5>
               <!-- Card info -->
               <div class="mt-3 info">
-                <span class="text1 d-block">Lorem ipsum dolor ist amet.</span>
-                <span class="text1">Lorem impsum dolor.</span>
+                <span class="text1 d-block" id="descripcion11">Lorem ipsum dolor ist amet.</span>
+                <span class="text1" id="descripcion12">Lorem impsum dolor.</span>
               </div>
               <div class="costwatch mt-3 text-dark">
-                <span class="articuloPrecio">$69.99</span>
+                <span class="articuloPrecio" id="precioFilter6">$79.99</span>
                 <div class="star mt-3 align-items-center">
                   <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
                 </div>
@@ -227,6 +233,7 @@
        <!-- Fin De Mi Carrito -->
 
        <script src="./js/javascript.js" async></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
     </body>
 </html>
