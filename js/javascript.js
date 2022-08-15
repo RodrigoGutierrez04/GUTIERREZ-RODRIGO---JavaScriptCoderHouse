@@ -143,16 +143,16 @@ function mayorAmenor(){
 // // Que el minimo de cantidad por obejto sea uno (que el usuario no pueda poner cantidades negativas de objetos)
 
 
-var inputCantidad = document.getElementsByClassName('inputCantidadCarrito')
-for (var i = 0; i < inputCantidad.length; i++) {
-    var input = inputCantidad[i]
+let inputCantidad = document.getElementsByClassName('inputCantidadCarrito')
+for (let i = 0; i < inputCantidad.length; i++) {
+    let input = inputCantidad[i]
     input.addEventListener('change', cantidadCambiada)
 }
 
 // Añadir al Carrito
-var anhadirAlCarritoBoton = document.getElementsByClassName('botonComprarArticulo')
-for (var i = 0; i < anhadirAlCarritoBoton.length; i++) {
-    var boton= anhadirAlCarritoBoton[i]
+let anhadirAlCarritoBoton = document.getElementsByClassName('botonComprarArticulo')
+for (let i = 0; i < anhadirAlCarritoBoton.length; i++) {
+    let boton= anhadirAlCarritoBoton[i]
     boton.addEventListener('click', anhadirAlCarritoClick)
 }
 
@@ -167,7 +167,7 @@ document.getElementsByClassName('botonComprar')[0].addEventListener('click', com
 
 function comprarClick() {
     alert('Gracias por tu compra')
-    var itemsCarrito = document.getElementsByClassName('articulosCarrito')[0]
+    let itemsCarrito = document.getElementsByClassName('articulosCarrito')[0]
     while (itemsCarrito.hasChildNodes()) {
         itemsCarrito.removeChild(itemsCarrito.firstChild)
     }
@@ -179,7 +179,7 @@ function comprarClick() {
 function quitarDeCarritoFuncion(event){
 // target para referirnos al elemento clickeado
 
-    var botonClickeado = event.target
+    let botonClickeado = event.target
     botonClickeado.parentElement.parentElement.remove()
     actualizarTotal()
 }
@@ -188,7 +188,7 @@ function quitarDeCarritoFuncion(event){
 // Funcion para que no se pueda poner cantidades negativas de objetos
 
 function cantidadCambiada(event) {
-    var input = event.target
+    let input = event.target
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
@@ -197,11 +197,11 @@ function cantidadCambiada(event) {
 
 // Funcion Añadir al Carrito
 function anhadirAlCarritoClick(event) {
-    var boton = event.target
-    var comprarItem = boton.parentElement.parentElement
-    var title = comprarItem.getElementsByClassName('articuloTitulo')[0].innerText
-    var price = comprarItem.getElementsByClassName('articuloPrecio')[0].innerText
-    var imageSrc = comprarItem.getElementsByClassName('articuloImagen')[0].src
+    let boton = event.target
+    let comprarItem = boton.parentElement.parentElement
+    let title = comprarItem.getElementsByClassName('articuloTitulo')[0].innerText
+    let price = comprarItem.getElementsByClassName('articuloPrecio')[0].innerText
+    let imageSrc = comprarItem.getElementsByClassName('articuloImagen')[0].src
     anhadirItemAlCarrito(title, price, imageSrc)
     actualizarTotal()
 }
@@ -212,15 +212,15 @@ function anhadirItemAlCarrito(title, price, imageSrc) {
     var filaCarrito = document.createElement('div')
     // acceder a la lista de clases de un elemento  
     filaCarrito.classList.add('cart-row')
-    var itemsCarrito = document.getElementsByClassName('articulosCarrito')[0]
-    var nombreItemCarrito = itemsCarrito.getElementsByClassName('cart-item-title')
-    for (var i = 0; i < nombreItemCarrito.length; i++) {
+    let itemsCarrito = document.getElementsByClassName('articulosCarrito')[0]
+    let nombreItemCarrito = itemsCarrito.getElementsByClassName('cart-item-title')
+    for (let i = 0; i < nombreItemCarrito.length; i++) {
         if (nombreItemCarrito[i].innerText == title) {
             alert('Este item ya está en el carrito')
             return
         }
     }
-    var contenidoFilaCarrito = `
+    let contenidoFilaCarrito = `
         <div class="cart-item cart-column">
             <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
             <span class="cart-item-title">${title}</span>
@@ -239,15 +239,15 @@ function anhadirItemAlCarrito(title, price, imageSrc) {
 
 
 function actualizarTotal() {
-    var containerItemCarrito = document.getElementsByClassName('articulosCarrito')[0]
+    let containerItemCarrito = document.getElementsByClassName('articulosCarrito')[0]
     var filaCarrito = containerItemCarrito.getElementsByClassName('cart-row')
-    var total = 0
-    for (var i = 0; i < filaCarrito.length; i++) {
+    let total = 0
+    for (let i = 0; i < filaCarrito.length; i++) {
         var filaCarrito = filaCarrito[i]
-        var precioItem = filaCarrito.getElementsByClassName('cart-price')[0]
-        var cantidadItem = filaCarrito.getElementsByClassName('inputCantidadCarrito')[0]
-        var precio = parseFloat(precioItem.innerText.replace('$', ''))
-        var cantidad = cantidadItem.value
+        let precioItem = filaCarrito.getElementsByClassName('cart-price')[0]
+        let cantidadItem = filaCarrito.getElementsByClassName('inputCantidadCarrito')[0]
+        let precio = parseFloat(precioItem.innerText.replace('$', ''))
+        let cantidad = cantidadItem.value
         total = total + (precio * cantidad)
     }
     total = Math.round(total * 100) / 100
