@@ -1,3 +1,30 @@
+// Contact Info
+sessionStorage.setItem("email", "soundsphere@soundsphere.com")
+
+let email = sessionStorage.getItem("email")
+console.log(email)
+// INPUT SUBMIT
+let miFormulario      = document.getElementById("formulario");
+miFormulario.addEventListener("submit", validarFormulario);
+
+let usuario = JSON.stringify(formulario.children[0].value)
+
+
+function validarFormulario(e){
+    //Cancelamos el comportamiento del evento
+    e.preventDefault();
+    //Obtenemos el elemento desde el cual se disparó el evento
+    let formulario = e.target
+    //Obtengo el valor del primero hijo <input type="text">
+    miFormulario.parentElement.parentElement.remove()
+    welcome.innerText = "Bienvenido/a, " + formulario.children[0].value
+
+}
+
+sessionStorage.setItem("wiederkommen", usuario)
+
+
+
 // FILTRAR DE MENOR A MAYOR PRECIO
 let menorMayor = document.getElementById("filterButtonLess")
 menorMayor.addEventListener("click" , menorAmayor)
