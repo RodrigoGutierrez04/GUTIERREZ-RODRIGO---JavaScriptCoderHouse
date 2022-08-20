@@ -3,6 +3,7 @@ if(localStorage.getItem("carrito")){
     carrito=JSON.parse(localStorage.getItem("carrito"));
 }
 let lista = document.getElementById("milista");
+const tablaDelCarrito = document.querySelector('table')
 
 
 
@@ -61,9 +62,8 @@ function agregarAlCarrito(producto){
     <td><img src="${producto.foto}" width="70" height="70" alt=""> ${producto.nombre}</td>
     <td>${producto.precio}</td>
     <td><input class="inputCantidadCarrito" type="number" value="1"></td>
-    <td id="btnremove${producto.id}"><button class="btn btn-remover" id="remove-btn" type="button">REMOVER</button></td>
- 
-   
+    <td><button class="btn btn-remover deleteBtn" type="button">REMOVER</button></td>
+
 </tr>`;
 
 let btn = document.getElementById(`btnremove${producto.id}`)
@@ -73,10 +73,15 @@ btn.onclick = () => {btn.parentElement.remove()}
 localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-function removerDeCarrito(event){
-    let clickedButton = event.target
-    clickedButton.parentElement.parentElement.remove()
+function BorrarFila(e){
+    if(!e.target.classList.contains("deleteBtn")){
+        return;
+    }
+const btn = e.target;
+btn.closest('tr').remove()
 }
+tablaDelCarrito.addEventListener("click",BorrarFila)
+
 
 
     
