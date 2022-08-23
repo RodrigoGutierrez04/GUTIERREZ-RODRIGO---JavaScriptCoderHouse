@@ -1,4 +1,32 @@
 let carrito = [];
+
+if (document.readyState == 'loading') {
+    document.addEventListener('DOMContentLoaded', ready)
+} else {
+    ready()
+}
+function ready(){
+    let inputCantidad = document.getElementsByClassName('inputCantidadCarrito')
+    for (let i = 0; i < inputCantidad.length; i++) {
+        let input = inputCantidad[i]
+        input.addEventListener('change', cantidadCambiada)
+    }
+}
+// Funcion para que no se pueda poner cantidades negativas de objetos
+
+
+function cantidadCambiada(event) {
+    let input = event.target
+    console.log(input)
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+    total()
+}
+
+
+
+
 if(localStorage.getItem("carrito")){
     carrito=JSON.parse(localStorage.getItem("carrito"));
 }
@@ -6,8 +34,7 @@ let lista = document.getElementById("milista");
 const tablaDelCarrito = document.querySelector('table')
 
 
-
-// Render
+// ------------------ Render -----------------//
 renderizarProductos();
 
 function renderizarProductos(){
@@ -43,7 +70,6 @@ function renderizarProductos(){
       </div>`;
        
     }
-    // eventos boton
     productos.forEach(producto => {
         document.getElementById(`btn${producto.id}`).addEventListener("click", function(){
             agregarAlCarrito(producto);
@@ -52,39 +78,92 @@ function renderizarProductos(){
     })
 }
 
+// ------------------ Fin Render -----------------//
+
+
+
 function agregarAlCarrito(producto){
+
+
     carrito.push(producto);
     console.log(carrito)
     alert("Producto "+producto.nombre+" agregado al carro")
     document.getElementById("tablabody").innerHTML+=
-    `<tr>
+    `<tr class="cart-row">
     <td>${producto.id}</td>
-    <td><img src="${producto.foto}" width="70" height="70" alt=""> ${producto.nombre}</td>
-    <td>${producto.precio}</td>
-    <td><input class="inputCantidadCarrito" type="number" value="1"></td>
-    <td><button class="btn btn-remover deleteBtn" type="button">REMOVER</button></td>
+    <td class="cart-item-title"><img src="${producto.foto}" width="70" height="70" alt=""> ${producto.nombre}</td>
+    <td class="carrito-precio" id="precio${producto.precio}">${producto.precio}</td>
+    <td><input class="inputCantidadCarrito carrito-cantidad" type="number" value="1"></td>
+    <td><button class="btn deleteBtn btn-remover" id="btnremove${producto.id}" type="button">REMOVER</button ></td>
 
 </tr>`;
 
-let btn = document.getElementById(`btnremove${producto.id}`)
-btn.onclick = () => {btn.parentElement.remove()}
+document.getElementsByClassName("carrito-cantidad")[0].addEventListener('change', cantidadCambiada)
 
 
-localStorage.setItem("carrito", JSON.stringify(carrito));
+total()
+
 }
 
+
+
+
+function anhadirLocalStorage(){
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+}
+
+
+
+// Borrar Fila
 function BorrarFila(e){
+
     if(!e.target.classList.contains("deleteBtn")){
         return;
     }
 const btn = e.target;
 btn.closest('tr').remove()
+
+total()
+
+
 }
 tablaDelCarrito.addEventListener("click",BorrarFila)
 
 
+// Boton COMPRAR
+document.getElementsByClassName('botonComprar')[0].addEventListener('click', comprarClick)
 
+// Funcion del Boton COMPRAR
+
+function comprarClick() {
+    alert('Gracias por tu compra')
+    localStorage.clear()
+    let itemsCarrito = document.getElementsByClassName("articulosCarrito")[0]
+    while (itemsCarrito.hasChildNodes()) {
+        itemsCarrito.removeChild(itemsCarrito.firstChild)
+    }
     
+}
+
+function total(){
+   let containerItemCarrito = document.getElementsByClassName('articulosCarrito')[0]
+   console.log(containerItemCarrito)
+   var filaCarrito = containerItemCarrito.getElementsByClassName('cart-row')
+   console.log(filaCarrito)
+    let total = 0
+    for (let i=0; i < filaCarrito.length; i++){
+        var filaCarritos = filaCarrito[i]
+        let precioItem = filaCarritos.getElementsByClassName("carrito-precio")[0]
+        let cantidadItem = filaCarritos.getElementsByClassName("carrito-cantidad")[0]
+        let precio = parseFloat(precioItem.innerText.replace('$', ''))
+        let cantidad = cantidadItem.value
+        total = total + (precio * cantidad)
+    }
+    total = Math.round(total * 100) / 100
+    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+}
+
+
 // FALTA: 
     // AGREGAR FINALIZAR COMPRA (Borrado de estructuras, mensaje de confirmacion de pedido, )
 
