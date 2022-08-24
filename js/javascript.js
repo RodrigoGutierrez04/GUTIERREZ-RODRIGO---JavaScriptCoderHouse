@@ -16,7 +16,7 @@ function ready(){
 
 
 function cantidadCambiada(event) {
-    let input = event.target
+    var input = event.target
     console.log(input)
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
@@ -81,9 +81,10 @@ function renderizarProductos(){
 // ------------------ Fin Render -----------------//
 
 
-
 function agregarAlCarrito(producto){
-
+let cartRow = document.createElement('tr')
+cartRow.classList.add('cart-row')
+let articulosCarrito = document.getElementsByClassName('articulosCarrito')[0]
 
     carrito.push(producto);
     console.log(carrito)
@@ -94,18 +95,22 @@ function agregarAlCarrito(producto){
         confirmButtonText: 'Cool'
 })
 
-    document.getElementById("tablabody").innerHTML+=
-    `<tr class="cart-row">
+let cartRowContent =    `
     <td>${producto.id}</td>
     <td class="cart-item-title"><img src="${producto.foto}" width="70" height="70" alt=""> ${producto.nombre}</td>
     <td class="carrito-precio" id="precio${producto.precio}">${producto.precio}</td>
-    <td><input id="cantidad${producto.cantidad}"class="inputCantidadCarrito carrito-cantidad" type="number" value="${producto.cantidad}"></td>
+    <td><input id="cantidad${producto.cantidad}" class="inputCantidadCarrito carrito-cantidad" type="number" value="${producto.cantidad}"></td>
     <td><button class="btn deleteBtn btn-remover" id="btnremove${producto.id}" type="button">REMOVER</button ></td>
 
-</tr>`;
+`;
+cartRow.innerHTML = cartRowContent
+articulosCarrito.append(cartRow)
 
-document.getElementsByClassName("carrito-cantidad")[0].addEventListener('change', cantidadCambiada)
+let quantity = document.getElementsByClassName("carrito-cantidad")
 
+for (let i = 0 ; i < quantity.length; i++) {
+    quantity[i].addEventListener('change' , cantidadCambiada) ; 
+ }
 
 total()
 
