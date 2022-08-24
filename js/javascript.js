@@ -87,13 +87,19 @@ function agregarAlCarrito(producto){
 
     carrito.push(producto);
     console.log(carrito)
-    alert("Producto "+producto.nombre+" agregado al carro")
+    Swal.fire({
+        title: 'Genial!',
+        text: 'Producto ' +producto.nombre+ ' agregado al carro',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+})
+
     document.getElementById("tablabody").innerHTML+=
     `<tr class="cart-row">
     <td>${producto.id}</td>
     <td class="cart-item-title"><img src="${producto.foto}" width="70" height="70" alt=""> ${producto.nombre}</td>
     <td class="carrito-precio" id="precio${producto.precio}">${producto.precio}</td>
-    <td><input class="inputCantidadCarrito carrito-cantidad" type="number" value="1"></td>
+    <td><input id="cantidad${producto.cantidad}"class="inputCantidadCarrito carrito-cantidad" type="number" value="${producto.cantidad}"></td>
     <td><button class="btn deleteBtn btn-remover" id="btnremove${producto.id}" type="button">REMOVER</button ></td>
 
 </tr>`;
@@ -136,7 +142,13 @@ document.getElementsByClassName('botonComprar')[0].addEventListener('click', com
 // Funcion del Boton COMPRAR
 
 function comprarClick() {
-    alert('Gracias por tu compra')
+    Swal.fire({
+        title: '¡Compra exitoa!',
+        text: 'Gracias por tu compra',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+})
+    
     localStorage.clear()
     let itemsCarrito = document.getElementsByClassName("articulosCarrito")[0]
     while (itemsCarrito.hasChildNodes()) {
