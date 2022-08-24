@@ -1,17 +1,17 @@
 let carrito = [];
 
-if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
-} else {
-    ready()
-}
-function ready(){
-    let inputCantidad = document.getElementsByClassName('inputCantidadCarrito')
-    for (let i = 0; i < inputCantidad.length; i++) {
-        let input = inputCantidad[i]
-        input.addEventListener('change', cantidadCambiada)
-    }
-}
+// if (document.readyState == 'loading') {
+//     document.addEventListener('DOMContentLoaded', ready)
+// } else {
+//     ready()
+// }
+// function ready(){
+//     let inputCantidad = document.getElementsByClassName('inputCantidadCarrito')
+//     for (let i = 0; i < inputCantidad.length; i++) {
+//         let input = inputCantidad[i]
+//         input.addEventListener('change', cantidadCambiada)
+//     }
+// }
 // Funcion para que no se pueda poner cantidades negativas de objetos
 
 
@@ -160,6 +160,8 @@ function comprarClick() {
         itemsCarrito.removeChild(itemsCarrito.firstChild)
     }
     
+    total()
+    
 }
 
 function total(){
@@ -182,7 +184,6 @@ function total(){
 
 
 // FALTA: 
-    // AGREGAR FINALIZAR COMPRA (Borrado de estructuras, mensaje de confirmacion de pedido, )
 
     // QUITAR objeto de CARRITO (y del LocalStorage)
     // FUNCION ACTUALIZAR COSTO TOTAL
