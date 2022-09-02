@@ -1,0 +1,37 @@
+[{
+    "id": 1,
+     "foto": "https://cdn.shopify.com/s/files/1/0468/1524/8536/products/cq5dam.web.600.600_15_600x.png?v=1643919233",
+     "nombre": "BOSE PORTABLE HOME SPEAKER",
+     "precio": 99.99
+ },
+ {
+     "id": 2,
+     "foto": "https://staging-web-harman.demandware.net/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw3e397e87/1_JBL_FLIP6_HERO_BLACK_29391_x2.png",
+     "nombre": "JBL FLIP 6",
+     "precio": 49.99
+ },
+ {
+     "id": 3,
+     "foto": "https://falabella.scene7.com/is/image/FalabellaPE/18230122_1?wid=800&hei=800&qlt=70",
+     "nombre": "SONY SRS XB13",
+     "precio": 35.99
+ },
+ {
+     "id": 4,
+     "foto": "https://coolboxpe.vtexassets.com/arquivos/ids/186638/JBLCLIP4BLKAM_1.jpg?v=637596367436900000",
+     "nombre": "JBL CLIP 4",
+     "precio": 29.99
+ },
+ {
+     "id": 5,
+     "foto": "https://coolboxpe.vtexassets.com/arquivos/ids/180733/43382_1.jpg?v=637496092350930000",
+     "nombre": "BOSE SOUNDLINK COLOR II",
+     "precio": 59.99
+ },
+ {
+     "id": 6,
+     "foto": "https://buketomnisportpweb.s3.us-east-2.amazonaws.com/seo/0pPAKUETdc6lB2HemFGRW1oXrGH8y642baqoTQAN.jpeg",
+     "nombre": "SONY SRS-XB23",
+     "precio": 79.99
+ }
+]
