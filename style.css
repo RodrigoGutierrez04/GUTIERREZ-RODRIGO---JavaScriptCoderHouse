@@ -33,6 +33,8 @@
     justify-content: space-between;
     padding: 1rem ;
     margin: 0;
+    margin-bottom: 3rem;
+
 }
 
 
@@ -46,275 +48,33 @@
     cursor: pointer;
 }
 
+.table{
+        width: 55rem;
+        margin-left: auto;
+        margin-right: auto;
+      
+}
+
 /* Fin NavBar */
 
 
- /* Inicio Catálogo */
-.catalogo{
-    background-color: white;
-  }
-  
-  .catalogoText{
-    font-size: 4rem;
-    line-height: 8rem;
-    padding-left: 3rem;
-  }
-  
-  /* Productos Catalogo */
-  
-  @import "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css";
-  
-  /* Universal styling for all cards */
-  .product-1 {
-    align-items: center;
-    justify-content: center;
-  }
-  .card{
-      border: none;
-      outline: none;
-      background-color: white;
-      border-radius: 20px;
 
-  }
-  
-  .card:hover{
-      transform: translateY(-15px);
-      transition: transform .3s;
-  
-  }
-  
-  .text1{
-      font-size: 13px;
-      color: #cbcbcb;
-  
-  }
-  
-  .info{
-      line-height: 17px;
-  }
-  
-  .star{
-      color: #fbc02d;
-  }
-  
-  /* Card1 */
-  .cost span{
-      color: black;
-      font-weight: bold;
-      font-size: 20px;
-  }
-  
-  .shoe{
-      background: black;
-  }
-  
-  /* Card 2 */
-  
-  .costwatch span{
-    color: black;
-      font-weight: bold;
-      font-size: 20px;
-  }
-  
-  .watch{
-    background: black;
-  }
-  
-  /* Universal styking again */
-  
-  .shirt:hover, watch:hover, .shoe:hover{
-      opacity: 0.8;
-  }
-  
-  .cursor{
-      cursor: pointer;
-  
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;}
-  
-  .rounded{
-    width: 300px;
-    height: 300px;
-  }
-  
-
-
-/* Carrito */
-.containerCarrito {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.5em;
-}
-
-
-.section-header-carrito {
-    font-weight: normal;
-    color: #333;
-    text-align: center;
-    font-size: 2.5em;
-}
-
-
-
-.cart-item {
-    width: 45%;
-}
-
-.cart-header {
-    font-weight: bold;
-    font-size: 1.25em;
-    color: #333;
-}
-
-.cart-column {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid black;
-    margin-right: 1.5em;
-    padding-bottom: 10px;
-    margin-top: 10px;
-}
-
-.cart-price {
-    width: 20%;
-    font-size: 1.2em;
-    color: #333;
-}
-
-.cart-quantity {
-    width: 35%;
-}
-
-.cart-total {
-    text-align: end;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-.cart-total-title {
-    font-weight: bold;
-    font-size: 1.5em;
-    color: black;
-    margin-right: 20px;
-}
-
-.cart-total-price {
-    color: #333;
-    font-size: 1.1em;
-}
-
-.botonComprar {
-    display: block;
-    margin: 40px auto 80px auto;
-    font-size: 1.75em;
+.center {
+    margin-bottom: 3rem;
+    position: absolute;
+    
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 
 .btn-primary{
     border-color: black;
     background-color: black;
-}
-
-.btn-primary:hover{
-background-color: #333;
-}
+    display: block;
+    margin: 90px auto 0px auto;
+    font-size: 1.75em;
 
 
-
-
-.cart-item-title {
-    color: #333;
-    margin-left: .5em;
-    font-size: 1.2em;
-}
-
-.cart-item-image {
-    width: 75px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.btn-remover {
-    color: white;
-    background-color: #EB5757;
-    border: none;
-    border-radius: .3em;
-    font-weight: bold;
-}
-
-.btn-remover:hover {
-    background-color: #CC4C4C;
-}
-
-.inputCantidadCarrito {
-    height: 34px;
-    width: 50px;
-    border-radius: 5px;
-    border: 1px solid #56CCF2;
-    background-color: #eee;
-    color: #333;
-    padding: 0;
-    text-align: center;
-    font-size: 1.2em;
-    margin-right: 25px;
-}
-
-.cart-row:last-child {
-    border-bottom: 1px solid black;
-}
-
-.cart-row:last-child .cart-column {
-    border: none;
-}
-
-/* Fin Carrito*/
-
-
-
-/* Modal */
-	
-.bg-modal {
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 100%;
-	height: 125rem;
-	z-index: 1000px;
-	position: absolute;
-	top: 0;
-    display: flex;
-	justify-content: center;
-}
-
-.modal-contents {
-    top: 10rem;
-	height: 300px;
-	width: 500px;
-	background-color: white;
-	text-align: center;
-	padding: 20px;
-	position: relative;
-	border-radius: 4px;
-}
-
-input {
-	display: block;
-	width: 50%;
-	padding: 8px;
-	border: 1px solid gray;
-}
-
-.close {
-	position: absolute;
-	top: 0;
-	right: 10px;
-	font-size: 42px;
-	color: #333;
-	transform: rotate(45deg);
-	cursor: pointer;
-	
-    
-   
-}
-
-.close:hover {
-    color: #666;
-}
+.btn-primary: 

@@ -8,33 +8,58 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
     ">
+    <!-- Css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="container">
-        <h1>Carrito</h1>
-        <hr>
+  <!-- Header -->
+  <header>
+    <!-- Nav -->
+    <div class="nav container-fluid">
+        <a href="" class="logo"><img src="./img/2.svg" alt=""></a>
+        
+        <!-- Icono Carrito -->
+       <a href="#carrito"> <i class='bx bx-shopping-bag' style='color:#ffffff' id="cart-icon"></i></a>
 
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Item</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Acción</th>
-                <th scope="col">Total</th>
-              </tr>
-            </thead>
-            <tbody id="items"></tbody>
-            <tfoot>
-              <tr id="footer">
-                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-              </tr>
-            </tfoot>
-          </table>
+    </header>
+    <div class="container">
+     
 
         <!-- Aqui las Cards -->
         <div class="row" id="cards"></div>
     </div>
+    <hr>
+
+    <h1 class="text-center" id="#carrito">Mi Carrito</h1>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Item</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Acción</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody id="items"></tbody>
+        <tfoot>
+          <tr id="footer">
+            <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+
+          </tr>
+
+        </tfoot>
+
+      </table>
+      <div class="containerBoton">
+        <div class="center">
+          <button class="btn btn-primary botonComprar" type="button" id="comprarYA">COMPRAR</button>
+        </div>
+      </div>
+
     <template id="template-footer">
         <th scope="row" colspan="2">Total productos</th>
         <td>10</td>

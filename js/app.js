@@ -102,7 +102,10 @@ const pintarCarrito = () => {
         templateCarrito.querySelector('th').textContent = producto.id
         templateCarrito.querySelectorAll('td')[0].textContent = producto.nombre
         templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
-        templateCarrito.querySelector('span').textContent = producto.precio * producto.cantidad
+        // REDONDEAR
+        templateCarrito.querySelector('span').textContent =  Math.round(producto.precio * producto.cantidad * 100) / 100
+
+    
         
         //botones
         templateCarrito.querySelector('.btn-info').dataset.id = producto.id
@@ -131,11 +134,14 @@ const pintarFooter = () => {
     
     // sumar cantidad y sumar totales
     const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
-    const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
+    const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * Math.round(precio * 100)/100  ,0)
+
     // console.log(nPrecio)
 
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
+
+   
 
     const clone = templateFooter.cloneNode(true)
     fragment.appendChild(clone)
@@ -178,6 +184,23 @@ const btnAccion = e => {
 
     e.stopPropagation
 
+
+}
+
+// Boton Comprar Ya
+document.getElementById('comprarYA').addEventListener('click', comprarYA)
+
+function comprarYA(){
+    Swal.fire({
+        title: 'Genial!',
+        text: 'Gracias por tu compra',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+})
+carrito = {}
+        pintarCarrito()
+
+localStorage.clear()
 
 }
 
